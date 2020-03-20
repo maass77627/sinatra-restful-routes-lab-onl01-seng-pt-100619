@@ -15,6 +15,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/recipes/new' do
+    @recipe = Recipe.find_by_id(params[:id])
     erb :new
   end
 
